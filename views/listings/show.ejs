@@ -1,0 +1,72 @@
+<% layout("layouts/boilerplate.ejs") %>
+<% layout("layouts/boilerplate.ejs") %>
+<body>
+  
+   
+<!-- 
+      <p>TITLE: <%=showData.title %></p>
+      <p>DESCRIPTION : </p>
+   <img src="<%=showData.image%>" alt="">
+      <p>PRICE: &#8377;<%=showData.price.toLocaleString("en-IN")%></p>
+      <p>LOCATION: <%=showData.location %></p>
+      <p>COUNTRY: <%=showData.country %></p> -->
+<div class="row">
+    <div class="col-8 offset-3">
+
+  
+      
+
+      <div class="card col-6" >
+        <p class="card-text"><b><%=showData.title %></b></p>
+        <img src="<%=showData.image.url%>" class="card-img-top" alt="listingImage">
+        <div class="card-body">
+        
+          <p> &#8377;<%=showData.price%>/Night</p></p>
+          <p><%= showData.description %></p>
+          <p><%=showData.location%></p>
+          <p><%=showData.country%></p>
+        </div>
+      </div>
+
+
+   
+
+   <div class="row">
+    <div class="col-1">
+    
+        <a href="/listings/<%=showData._id %>/edit" class="btn btn-primary mb-3">edit</a>
+        
+        </div>
+        <div class="col">
+            <form method="POST"   action="/listings/<%=showData._id%>?_method=DELETE">
+                <button  class="btn btn-danger mb-3" >Delete</button>
+              </form>
+        </div>
+        
+
+   </div>
+ <b>  <hr></b>
+
+   <div class="col-8">
+    <p>Leave A Review</p>
+    <form method="POST" action="/listings/<%=showData._id%>/review"  novalidate class="needs-validation">
+      <div class="rating mb-2">
+        <label  for="rating" class="form-label">Rating</label>
+      <input id="rathing" type="range" name="rating[rate]" class="form-label" >
+      </div>
+     <div class="comment mb-3">
+       <label for="comment"  class="form-label">comment</label><br>
+      <textarea placeholder="Write A Review" id="comment" class="form-control" name="rating[comment]" rows="6" class="form-control" required></textarea>
+      <div class="invalid-feedback">please send valid review</div>
+    </div>
+    <button class=" btn btn-primary mb-3">submit</button>
+    </form>
+   </div>
+
+   
+
+</div>
+</div>
+       
+    
+</body>

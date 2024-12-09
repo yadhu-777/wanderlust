@@ -1,0 +1,40 @@
+<% layout("layouts/boilerplate.ejs") %>
+<body>
+  
+    <div class="row">
+        <div class="col-8 offset-2">
+
+            <h2>edit your form</h2>
+    <form method="POST" action="/listings/<%=ditData._id %>?_method=PUT">
+        <div  class="mb-3">
+            <label  class="form-label" for="title"></label>
+            <input value="<%=ditData.title%>" type="text" name ="edit[title]" class="form-control" required>
+        </div>
+        <div  class="mb-3"> 
+            <label  class="form-label" for="description"></label>
+            <input value="<%= ditData.description %>" type="text" name ="edit[description]" class="form-control" required>
+        </div > 
+       <div class="mb-3">
+        <label for="image" class="form-label"></label>
+        <input type="text" value="<%=ditData.image%>" name="edit[image] " class="form-control" >
+       </div>
+        <div class="row">
+            <div  class="col-md-4 ">
+                <label  class="form-label" for="price"></label>
+                <input value="<%=ditData.price%>" type="number" name ="edit[price]" class="form-control" required>
+            </div>
+            <div class="col-md-8 mb-3">
+                <label class="form-label" for="country"></label>
+                <input value="<%=ditData.country%>" type="text" name ="edit[country]" class="form-control"required>
+            </div>
+        </div>
+        <div  class="mb-3">
+            <label  class="form-label" for="location"></label>
+            <input value="<%=ditData.location%>" type="text" name ="edit[location]" class="form-control"required>
+        </div>
+        
+        <button class="btn btn-primary">submit</button>
+    </form>
+</div>
+</div>
+</body>

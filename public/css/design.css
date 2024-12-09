@@ -1,0 +1,85 @@
+
+
+body {
+  font-family: "Plus Jakarta Sans", serif ! important;
+  font-optical-sizing: auto;
+  font-weight: 400 ! important;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh !important;
+  padding: 0 1rem 0 1rem;
+}
+.cont{
+  flex: 1 !important;
+}
+
+
+
+
+.navbar{
+    height: 5rem;
+    background-color: white;
+}
+.fa-compass{
+    color: red;
+    font-size: 2rem;
+}
+.nav-link{
+    color:#222222 ! important;
+
+}
+footer {
+    text-align: center;
+    background-color: #ebebeb;
+    padding: 20px;
+    font-size: 1.2rem;
+  }
+  
+  footer .social-icons {
+    margin-bottom: 10px;
+  }
+  
+  footer .social-icons a {
+    margin: 0 10px;
+    color: #222;
+    text-decoration: none;
+  }
+  
+  footer .social-icons a:hover {
+    text-decoration: underline;
+  }
+
+.social-terms a {
+    text-decoration: none;
+
+}
+/* .card img{
+  border-radius: 1rem;
+} */
+.card-img-top{
+ border-radius: 1rem !important;
+ object-fit: cover !important;
+ height: 20rem;
+}
+.card{
+  border: none !important;
+  margin-bottom: 1rem;
+ 
+  
+ 
+}
+.card-body{
+  padding: 0 !important;
+  
+  }
+.list-text{
+  text-decoration: none;
+}
+.card-img-overlay{
+  opacity: 0 ;
+}
+.card-img-overlay :hover{
+  opacity: 0.2;
+  background-color: white;
+}

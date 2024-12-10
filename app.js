@@ -28,8 +28,9 @@ async function main(){
 app.listen(3000,()=>{
     console.log("server started");
 });
-app.use("/listings/:id/review",revlistings);
 app.use("/listings",listings);
+app.use("/listings/:id/review",revlistings);
+
 
 
 

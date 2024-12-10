@@ -1,14 +1,14 @@
 <% layout("layouts/boilerplate.ejs") %>
 
 <body>
-    <h2>ALL LISTINGS</h2>
+    <h2>Destinations</h2>
    
    
 <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 " >
       
   <% for(dt of data) { %>  
-<a href="/listings/<%=dt._id%>" class="list-text">>
-      <div class="card col " >
+<a href="/listings/<%=dt._id%>" class="list-text">
+      <div class="listing-card col " >
         <img src="<%=dt.image.url %>" class="card-img-top" alt="listings">
         <div class="card-img-overlay"> <p>yadhu</p></div>
         <div class="card-body">

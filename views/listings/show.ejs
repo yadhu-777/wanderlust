@@ -11,15 +11,15 @@
       <p>LOCATION: <%=showData.location %></p>
       <p>COUNTRY: <%=showData.country %></p> -->
 <div class="row">
-    <div class="col-8 offset-3">
+    <div class="col-8 offset-3 mb-2">
 
   
-      
+      <div class="row">
 
-      <div class="card col-6" >
+      <div class="card col-6  listing-card " >
         <p class="card-text"><b><%=showData.title %></b></p>
-        <img src="<%=showData.image.url%>" class="card-img-top" alt="listingImage">
-        <div class="card-body">
+        <img src="<%=showData.image.url%>" class="card-img-top mb-3" alt="listingImage">
+        <div class="card-body ">
         
           <p> &#8377;<%=showData.price%>/Night</p></p>
           <p><%= showData.description %></p>
@@ -28,7 +28,7 @@
         </div>
       </div>
 
-
+    </div>
    
 
    <div class="row">
@@ -52,19 +52,39 @@
     <form method="POST" action="/listings/<%=showData._id%>/review"  novalidate class="needs-validation">
       <div class="rating mb-2">
         <label  for="rating" class="form-label">Rating</label>
-      <input id="rathing" type="range" name="rating[rate]" class="form-label" >
+      <input id="rathing" type="range" name="review[rating]" min="1" max="5" class="form-label" >
       </div>
      <div class="comment mb-3">
        <label for="comment"  class="form-label">comment</label><br>
-      <textarea placeholder="Write A Review" id="comment" class="form-control" name="rating[comment]" rows="6" class="form-control" required></textarea>
+      <textarea placeholder="Write A Review" id="comment" class="form-control" name="review[comment]" rows="6" class="form-control" required></textarea>
       <div class="invalid-feedback">please send valid review</div>
     </div>
     <button class=" btn btn-primary mb-3">submit</button>
     </form>
    </div>
 
-   
+   <hr>
 
+<h4>All Review </h4>
+
+<div class="row">
+  <% for(review of showData.reviews) { %>  
+    
+    <div class="card col-4 ms-3 mb-3">
+      
+      <div class="card-body mb-1">
+        <h5 class="card-title">yadhu </h5>
+        <p class="card-text"> <%=review.comment %></p>
+        <p class="card-text"><%= review.rating %> Stars</p>
+      </div>
+      <form method="POST" action="/listings/<%=showData._id%>/review/<%=review._id%>?_method=DELETE">
+        <button class="btn btn-sm btn-dark">Delete</button>
+      </form>
+    </div>
+      
+      
+      <%}%>
+</div>
 </div>
 </div>
        
